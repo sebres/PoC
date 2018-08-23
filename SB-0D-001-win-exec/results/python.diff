@@ -1,0 +1,478 @@
+ > python test-dump-inv.py
+ --------------------
+ *  0) `test-dump.exe´ `test"whoami´
+       `test-dump.exe´ `test"whoami´
+ *  0) `test-dump.CMD´ `test"whoami´
+       `test-dump.exe´ `test"whoami´
+ --------------------
+ *  1) `test-dump.exe´ `test""whoami´
+       `test-dump.exe´ `test""whoami´
+ *  1) `test-dump.CMD´ `test""whoami´
+       `test-dump.exe´ `test""whoami´
+ --------------------
+ *  2) `test-dump.exe´ `test"""whoami´
+       `test-dump.exe´ `test"""whoami´
+ *  2) `test-dump.CMD´ `test"""whoami´
+       `test-dump.exe´ `test"""whoami´
+ --------------------
+ *  3) `test-dump.exe´ `test""""whoami´
+       `test-dump.exe´ `test""""whoami´
+ *  3) `test-dump.CMD´ `test""""whoami´
+       `test-dump.exe´ `test""""whoami´
+ --------------------
+ *  4) `test-dump.exe´ `test"whoami\´
+       `test-dump.exe´ `test"whoami\´
+ *  4) `test-dump.CMD´ `test"whoami\´
+       `test-dump.exe´ `test"whoami\´
+ --------------------
+ *  5) `test-dump.exe´ `test""whoami\´
+       `test-dump.exe´ `test""whoami\´
+ *  5) `test-dump.CMD´ `test""whoami\´
+       `test-dump.exe´ `test""whoami\´
+ --------------------
+ *  6) `test-dump.exe´ `test"""whoami\´
+       `test-dump.exe´ `test"""whoami\´
+ *  6) `test-dump.CMD´ `test"""whoami\´
+       `test-dump.exe´ `test"""whoami\´
+ --------------------
+ *  7) `test-dump.exe´ `test""""whoami\´
+       `test-dump.exe´ `test""""whoami\´
+ *  7) `test-dump.CMD´ `test""""whoami\´
+       `test-dump.exe´ `test""""whoami\´
+ --------------------
+ *  8) `test-dump.exe´ `test"whoami\\´
+       `test-dump.exe´ `test"whoami\\´
+ *  8) `test-dump.CMD´ `test"whoami\\´
+       `test-dump.exe´ `test"whoami\\´
+ --------------------
+ *  9) `test-dump.exe´ `test""whoami\\´
+       `test-dump.exe´ `test""whoami\\´
+ *  9) `test-dump.CMD´ `test""whoami\\´
+       `test-dump.exe´ `test""whoami\\´
+ --------------------
+ * 10) `test-dump.exe´ `test"""whoami\\´
+       `test-dump.exe´ `test"""whoami\\´
+ * 10) `test-dump.CMD´ `test"""whoami\\´
+       `test-dump.exe´ `test"""whoami\\´
+ --------------------
+ * 11) `test-dump.exe´ `test""""whoami\\´
+       `test-dump.exe´ `test""""whoami\\´
+ * 11) `test-dump.CMD´ `test""""whoami\\´
+       `test-dump.exe´ `test""""whoami\\´
+ --------------------
+ * 12) `test-dump.exe´ `test\\&\\test´
+       `test-dump.exe´ `test\\&\\test´
+-* 12) `test-dump.CMD´ `test\\&\\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test\\´ ERROR: The filename, directory name, or volume label syntax is incorrect.
+ --------------------
+ * 13) `test-dump.exe´ `test"\\&\\test´
+       `test-dump.exe´ `test"\\&\\test´
+ * 13) `test-dump.CMD´ `test"\\&\\test´
+       `test-dump.exe´ `test"\\&\\test´
+ --------------------
+ * 14) `test-dump.exe´ `"test\\&\\test´
+       `test-dump.exe´ `"test\\&\\test´
+ * 14) `test-dump.CMD´ `"test\\&\\test´
+       `test-dump.exe´ `"test\\&\\test´
+ --------------------
+ * 15) `test-dump.exe´ `"test"\\&\\"test"´
+       `test-dump.exe´ `"test"\\&\\"test"´
+-* 15) `test-dump.CMD´ `"test"\\&\\"test"´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test"\\´ ERROR: '\\\\\"test\"' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 16) `test-dump.exe´ `test\\"&"\\test´
+       `test-dump.exe´ `test\\"&"\\test´
+ * 16) `test-dump.CMD´ `test\\"&"\\test´
+       `test-dump.exe´ `test\\"&"\\test´
+ --------------------
+ * 17) `test-dump.exe´ `test"\\"&"\\test´
+       `test-dump.exe´ `test"\\"&"\\test´
+-* 17) `test-dump.CMD´ `test"\\"&"\\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"\\"´ ERROR: The specified path is invalid.
+ --------------------
+ * 18) `test-dump.exe´ `"test\\"&"\\test´
+       `test-dump.exe´ `"test\\"&"\\test´
+-* 18) `test-dump.CMD´ `"test\\"&"\\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test\\"´ ERROR: The specified path is invalid.
+ --------------------
+ * 19) `test-dump.exe´ `"test"\\"&"\\"test"´
+       `test-dump.exe´ `"test"\\"&"\\"test"´
+ * 19) `test-dump.CMD´ `"test"\\"&"\\"test"´
+       `test-dump.exe´ `"test"\\"&"\\"test"´
+ --------------------
+ * 20) `test-dump.exe´ `test\"&whoami´
+       `test-dump.exe´ `test\"&whoami´
+ * 20) `test-dump.CMD´ `test\"&whoami´
+       `test-dump.exe´ `test\"&whoami´
+ --------------------
+ * 21) `test-dump.exe´ `test"\"&whoami´
+       `test-dump.exe´ `test"\"&whoami´
+-* 21) `test-dump.CMD´ `test"\"&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"\"´my_domain\sebres
+ --------------------
+ * 22) `test-dump.exe´ `test""\"&whoami´
+       `test-dump.exe´ `test""\"&whoami´
+ * 22) `test-dump.CMD´ `test""\"&whoami´
+       `test-dump.exe´ `test""\"&whoami´
+ --------------------
+ * 23) `test-dump.exe´ `test"""\"&whoami´
+       `test-dump.exe´ `test"""\"&whoami´
+-* 23) `test-dump.CMD´ `test"""\"&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"""\"´my_domain\sebres
+ --------------------
+ * 24) `test-dump.exe´ `test\"\&whoami´
+       `test-dump.exe´ `test\"\&whoami´
+ * 24) `test-dump.CMD´ `test\"\&whoami´
+       `test-dump.exe´ `test\"\&whoami´
+ --------------------
+ * 25) `test-dump.exe´ `test"\"\&whoami´
+       `test-dump.exe´ `test"\"\&whoami´
+-* 25) `test-dump.CMD´ `test"\"\&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"\"\´my_domain\sebres
+ --------------------
+ * 26) `test-dump.exe´ `test""\"\&whoami´
+       `test-dump.exe´ `test""\"\&whoami´
+ * 26) `test-dump.CMD´ `test""\"\&whoami´
+       `test-dump.exe´ `test""\"\&whoami´
+ --------------------
+ * 27) `test-dump.exe´ `test"""\"\&whoami´
+       `test-dump.exe´ `test"""\"\&whoami´
+-* 27) `test-dump.CMD´ `test"""\"\&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"""\"\´my_domain\sebres
+ --------------------
+ * 28) `test-dump.exe´ `test&whoami´
+       `test-dump.exe´ `test&whoami´
+-* 28) `test-dump.CMD´ `test&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test´my_domain\sebres
+ --------------------
+ * 29) `test-dump.exe´ `test|whoami´
+       `test-dump.exe´ `test|whoami´
+-* 29) `test-dump.CMD´ `test|whoami´ -- *VULNERABLE*
+-  my_domain\sebres
+ --------------------
+ * 30) `test-dump.exe´ `"test&whoami´
+       `test-dump.exe´ `"test&whoami´
+ * 30) `test-dump.CMD´ `"test&whoami´
+       `test-dump.exe´ `"test&whoami´
+ --------------------
+ * 31) `test-dump.exe´ `"test|whoami´
+       `test-dump.exe´ `"test|whoami´
+ * 31) `test-dump.CMD´ `"test|whoami´
+       `test-dump.exe´ `"test|whoami´
+ --------------------
+ * 32) `test-dump.exe´ `test"&whoami´
+       `test-dump.exe´ `test"&whoami´
+ * 32) `test-dump.CMD´ `test"&whoami´
+       `test-dump.exe´ `test"&whoami´
+ --------------------
+ * 33) `test-dump.exe´ `test"|whoami´
+       `test-dump.exe´ `test"|whoami´
+ * 33) `test-dump.CMD´ `test"|whoami´
+       `test-dump.exe´ `test"|whoami´
+ --------------------
+ * 34) `test-dump.exe´ `"test"&whoami´
+       `test-dump.exe´ `"test"&whoami´
+-* 34) `test-dump.CMD´ `"test"&whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test"´my_domain\sebres
+ --------------------
+ * 35) `test-dump.exe´ `"test"|whoami´
+       `test-dump.exe´ `"test"|whoami´
+-* 35) `test-dump.CMD´ `"test"|whoami´ -- *VULNERABLE*
+-  my_domain\sebres
+ --------------------
+ * 36) `test-dump.exe´ `""test"&whoami´
+       `test-dump.exe´ `""test"&whoami´
+ * 36) `test-dump.CMD´ `""test"&whoami´
+       `test-dump.exe´ `""test"&whoami´
+ --------------------
+ * 37) `test-dump.exe´ `""test"|whoami´
+       `test-dump.exe´ `""test"|whoami´
+ * 37) `test-dump.CMD´ `""test"|whoami´
+       `test-dump.exe´ `""test"|whoami´
+ --------------------
+ * 38) `test-dump.exe´ `test&echo "´
+       `test-dump.exe´ `test&echo "´
+ * 38) `test-dump.CMD´ `test&echo "´
+       `test-dump.exe´ `test&echo "´
+ --------------------
+ * 39) `test-dump.exe´ `test|echo "´
+       `test-dump.exe´ `test|echo "´
+ * 39) `test-dump.CMD´ `test|echo "´
+       `test-dump.exe´ `test|echo "´
+ --------------------
+ * 40) `test-dump.exe´ `"test&echo "´
+       `test-dump.exe´ `"test&echo "´
+-* 40) `test-dump.CMD´ `"test&echo "´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test´\""
+ --------------------
+ * 41) `test-dump.exe´ `"test|echo "´
+       `test-dump.exe´ `"test|echo "´
+-* 41) `test-dump.CMD´ `"test|echo "´ -- *VULNERABLE*
+-  \""
+ --------------------
+ * 42) `test-dump.exe´ `test"&echo "´
+       `test-dump.exe´ `test"&echo "´
+-* 42) `test-dump.CMD´ `test"&echo "´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"´\""
+ --------------------
+ * 43) `test-dump.exe´ `test"|echo "´
+       `test-dump.exe´ `test"|echo "´
+-* 43) `test-dump.CMD´ `test"|echo "´ -- *VULNERABLE*
+-  \""
+ --------------------
+ * 44) `test-dump.exe´ `"test"&echo "´
+       `test-dump.exe´ `"test"&echo "´
+ * 44) `test-dump.CMD´ `"test"&echo "´
+       `test-dump.exe´ `"test"&echo "´
+ --------------------
+ * 45) `test-dump.exe´ `"test"|echo "´
+       `test-dump.exe´ `"test"|echo "´
+ * 45) `test-dump.CMD´ `"test"|echo "´
+       `test-dump.exe´ `"test"|echo "´
+ --------------------
+ * 46) `test-dump.exe´ `""test"&echo "´
+       `test-dump.exe´ `""test"&echo "´
+-* 46) `test-dump.CMD´ `""test"&echo "´ -- *VULNERABLE*
+-      `test-dump.exe´ `""test"´\""
+ --------------------
+ * 47) `test-dump.exe´ `""test"|echo "´
+       `test-dump.exe´ `""test"|echo "´
+-* 47) `test-dump.CMD´ `""test"|echo "´ -- *VULNERABLE*
+-  \""
+ --------------------
+ * 48) `test-dump.exe´ `test&echo ""´
+       `test-dump.exe´ `test&echo ""´
+ * 48) `test-dump.CMD´ `test&echo ""´
+       `test-dump.exe´ `test&echo ""´
+ --------------------
+ * 49) `test-dump.exe´ `test|echo ""´
+       `test-dump.exe´ `test|echo ""´
+ * 49) `test-dump.CMD´ `test|echo ""´
+       `test-dump.exe´ `test|echo ""´
+ --------------------
+ * 50) `test-dump.exe´ `"test&echo ""´
+       `test-dump.exe´ `"test&echo ""´
+-* 50) `test-dump.CMD´ `"test&echo ""´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test´\"\""
+ --------------------
+ * 51) `test-dump.exe´ `"test|echo ""´
+       `test-dump.exe´ `"test|echo ""´
+-* 51) `test-dump.CMD´ `"test|echo ""´ -- *VULNERABLE*
+-  \"\""
+ --------------------
+ * 52) `test-dump.exe´ `test"&echo ""´
+       `test-dump.exe´ `test"&echo ""´
+-* 52) `test-dump.CMD´ `test"&echo ""´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"´\"\""
+ --------------------
+ * 53) `test-dump.exe´ `test"|echo ""´
+       `test-dump.exe´ `test"|echo ""´
+-* 53) `test-dump.CMD´ `test"|echo ""´ -- *VULNERABLE*
+-  \"\""
+ --------------------
+ * 54) `test-dump.exe´ `"test"&echo ""´
+       `test-dump.exe´ `"test"&echo ""´
+ * 54) `test-dump.CMD´ `"test"&echo ""´
+       `test-dump.exe´ `"test"&echo ""´
+ --------------------
+ * 55) `test-dump.exe´ `"test"|echo ""´
+       `test-dump.exe´ `"test"|echo ""´
+ * 55) `test-dump.CMD´ `"test"|echo ""´
+       `test-dump.exe´ `"test"|echo ""´
+ --------------------
+ * 56) `test-dump.exe´ `""test"&echo ""´
+       `test-dump.exe´ `""test"&echo ""´
+-* 56) `test-dump.CMD´ `""test"&echo ""´ -- *VULNERABLE*
+-      `test-dump.exe´ `""test"´\"\""
+ --------------------
+ * 57) `test-dump.exe´ `""test"|echo ""´
+       `test-dump.exe´ `""test"|echo ""´
+-* 57) `test-dump.CMD´ `""test"|echo ""´ -- *VULNERABLE*
+-  \"\""
+ --------------------
+ * 58) `test-dump.exe´ `test>whoami´
+       `test-dump.exe´ `test>whoami´
+-* 58) `test-dump.CMD´ `test>whoami´ -- *VULNERABLE*
+ --------------------
+ * 59) `test-dump.exe´ `test<whoami´
+       `test-dump.exe´ `test<whoami´
+-* 59) `test-dump.CMD´ `test<whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `test´
+ --------------------
+ * 60) `test-dump.exe´ `"test>whoami´
+       `test-dump.exe´ `"test>whoami´
+ * 60) `test-dump.CMD´ `"test>whoami´
+       `test-dump.exe´ `"test>whoami´
+ --------------------
+ * 61) `test-dump.exe´ `"test<whoami´
+       `test-dump.exe´ `"test<whoami´
+ * 61) `test-dump.CMD´ `"test<whoami´
+       `test-dump.exe´ `"test<whoami´
+ --------------------
+ * 62) `test-dump.exe´ `test">whoami´
+       `test-dump.exe´ `test">whoami´
+ * 62) `test-dump.CMD´ `test">whoami´
+       `test-dump.exe´ `test">whoami´
+ --------------------
+ * 63) `test-dump.exe´ `test"<whoami´
+       `test-dump.exe´ `test"<whoami´
+ * 63) `test-dump.CMD´ `test"<whoami´
+       `test-dump.exe´ `test"<whoami´
+ --------------------
+ * 64) `test-dump.exe´ `"test">whoami´
+       `test-dump.exe´ `"test">whoami´
+-* 64) `test-dump.CMD´ `"test">whoami´ -- *VULNERABLE*
+ --------------------
+ * 65) `test-dump.exe´ `"test"<whoami´
+       `test-dump.exe´ `"test"<whoami´
+-* 65) `test-dump.CMD´ `"test"<whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `"test"´
+ --------------------
+ * 66) `test-dump.exe´ `""test">whoami´
+       `test-dump.exe´ `""test">whoami´
+ * 66) `test-dump.CMD´ `""test">whoami´
+       `test-dump.exe´ `""test">whoami´
+ --------------------
+ * 67) `test-dump.exe´ `""test"<whoami´
+       `test-dump.exe´ `""test"<whoami´
+ * 67) `test-dump.CMD´ `""test"<whoami´
+       `test-dump.exe´ `""test"<whoami´
+ --------------------
+ * 68) `test-dump.exe´ `test(whoami)´
+       `test-dump.exe´ `test(whoami)´
+ * 68) `test-dump.CMD´ `test(whoami)´
+       `test-dump.exe´ `test(whoami)´
+ --------------------
+ * 69) `test-dump.exe´ `test(whoami)´
+       `test-dump.exe´ `test(whoami)´
+ * 69) `test-dump.CMD´ `test(whoami)´
+       `test-dump.exe´ `test(whoami)´
+ --------------------
+ * 70) `test-dump.exe´ `test"(whoami)´
+       `test-dump.exe´ `test"(whoami)´
+ * 70) `test-dump.CMD´ `test"(whoami)´
+       `test-dump.exe´ `test"(whoami)´
+ --------------------
+ * 71) `test-dump.exe´ `test"(whoami)´
+       `test-dump.exe´ `test"(whoami)´
+ * 71) `test-dump.CMD´ `test"(whoami)´
+       `test-dump.exe´ `test"(whoami)´
+ --------------------
+ * 72) `test-dump.exe´ `test^whoami´
+       `test-dump.exe´ `test^whoami´
+-* 72) `test-dump.CMD´ `test^whoami´ -- *VULNERABLE*
+-      `test-dump.exe´ `testwhoami´
+ --------------------
+ * 73) `test-dump.exe´ `test^^echo ^^^´
+       `test-dump.exe´ `test^^echo ^^^´
+ * 73) `test-dump.CMD´ `test^^echo ^^^´
+       `test-dump.exe´ `test^^echo ^^^´
+ --------------------
+ * 74) `test-dump.exe´ `test"^whoami´
+       `test-dump.exe´ `test"^whoami´
+ * 74) `test-dump.CMD´ `test"^whoami´
+       `test-dump.exe´ `test"^whoami´
+ --------------------
+ * 75) `test-dump.exe´ `test"^^echo ^^^´
+       `test-dump.exe´ `test"^^echo ^^^´
+-* 75) `test-dump.CMD´ `test"^^echo ^^^´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"echo ´
+ --------------------
+ * 76) `test-dump.exe´ `test"^echo ^^^"´
+       `test-dump.exe´ `test"^echo ^^^"´
+-* 76) `test-dump.CMD´ `test"^echo ^^^"´ -- *VULNERABLE*
+-      `test-dump.exe´ `test"echo "´
+ --------------------
+ * 77) `test-dump.exe´ `test""^echo" ^^^"´
+       `test-dump.exe´ `test""^echo" ^^^"´
+-* 77) `test-dump.CMD´ `test""^echo" ^^^"´ -- *VULNERABLE*
+-      `test-dump.exe´ `test""^echo" "´
+ --------------------
+ * 78) `test-dump.exe´ `test%USERDOMAIN%\%USERNAME%´
+       `test-dump.exe´ `test%USERDOMAIN%\%USERNAME%´
+-* 78) `test-dump.CMD´ `test%USERDOMAIN%\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\sebres´
+ --------------------
+ * 79) `test-dump.exe´ `test" %USERDOMAIN%\%USERNAME%´
+       `test-dump.exe´ `test" %USERDOMAIN%\%USERNAME%´
+-* 79) `test-dump.CMD´ `test" %USERDOMAIN%\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\sebres´
+ --------------------
+ * 80) `test-dump.exe´ `test%USERDOMAIN%\\%USERNAME%´
+       `test-dump.exe´ `test%USERDOMAIN%\\%USERNAME%´
+-* 80) `test-dump.CMD´ `test%USERDOMAIN%\\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\\sebres´
+ --------------------
+ * 81) `test-dump.exe´ `test" %USERDOMAIN%\\%USERNAME%´
+       `test-dump.exe´ `test" %USERDOMAIN%\\%USERNAME%´
+-* 81) `test-dump.CMD´ `test" %USERDOMAIN%\\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\\sebres´
+ --------------------
+ * 82) `test-dump.exe´ `test%USERDOMAIN%&%USERNAME%´
+       `test-dump.exe´ `test%USERDOMAIN%&%USERNAME%´
+-* 82) `test-dump.CMD´ `test%USERDOMAIN%&%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain´ ERROR: 'sebres' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 83) `test-dump.exe´ `test" %USERDOMAIN%&%USERNAME%´
+       `test-dump.exe´ `test" %USERDOMAIN%&%USERNAME%´
+-* 83) `test-dump.CMD´ `test" %USERDOMAIN%&%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain´ ERROR: 'sebres"' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 84) `test-dump.exe´ `test%USERDOMAIN%\&\%USERNAME%´
+       `test-dump.exe´ `test%USERDOMAIN%\&\%USERNAME%´
+-* 84) `test-dump.CMD´ `test%USERDOMAIN%\&\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\´ ERROR: '\sebres' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 85) `test-dump.exe´ `test" %USERDOMAIN%\&\%USERNAME%´
+       `test-dump.exe´ `test" %USERDOMAIN%\&\%USERNAME%´
+-* 85) `test-dump.CMD´ `test" %USERDOMAIN%\&\%USERNAME%´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\´ ERROR: '\sebres"' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 86) `test-dump.exe´ `test%USERDOMAIN%\&\test´
+       `test-dump.exe´ `test%USERDOMAIN%\&\test´
+-* 86) `test-dump.CMD´ `test%USERDOMAIN%\&\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\´ ERROR: '\test' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 87) `test-dump.exe´ `test" %USERDOMAIN%\&\test´
+       `test-dump.exe´ `test" %USERDOMAIN%\&\test´
+-* 87) `test-dump.CMD´ `test" %USERDOMAIN%\&\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\´ ERROR: '\test"' is not recognized as an internal or external command,
+-operable program or batch file.
+ --------------------
+ * 88) `test-dump.exe´ `test%USERDOMAIN%\\&\\test´
+       `test-dump.exe´ `test%USERDOMAIN%\\&\\test´
+-* 88) `test-dump.CMD´ `test%USERDOMAIN%\\&\\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\\´ ERROR: The filename, directory name, or volume label syntax is incorrect.
+ --------------------
+ * 89) `test-dump.exe´ `test" %USERDOMAIN%\\&\\test´
+       `test-dump.exe´ `test" %USERDOMAIN%\\&\\test´
+-* 89) `test-dump.CMD´ `test" %USERDOMAIN%\\&\\test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\\´ ERROR: The filename, directory name, or volume label syntax is incorrect.
+ --------------------
+ * 90) `test-dump.exe´ `test%USERDOMAIN%\&\"test´
+       `test-dump.exe´ `test%USERDOMAIN%\&\"test´
+-* 90) `test-dump.CMD´ `test%USERDOMAIN%\&\"test´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\´ ERROR: The specified path is invalid.
+ --------------------
+ * 91) `test-dump.exe´ `test" %USERDOMAIN%\&\"test´
+       `test-dump.exe´ `test" %USERDOMAIN%\&\"test´
+-* 91) `test-dump.CMD´ `test" %USERDOMAIN%\&\"test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\´ ERROR: The specified path is invalid.
+ --------------------
+ * 92) `test-dump.exe´ `test%USERDOMAIN%\\&\\"test´
+       `test-dump.exe´ `test%USERDOMAIN%\\&\\"test´
+-* 92) `test-dump.CMD´ `test%USERDOMAIN%\\&\\"test´ -- *VULNERABLE*
+-      `test-dump.exe´ `testmy_domain\\´ ERROR: The specified path is invalid.
+ --------------------
+ * 93) `test-dump.exe´ `test" %USERDOMAIN%\\&\\"test´
+       `test-dump.exe´ `test" %USERDOMAIN%\\&\\"test´
+-* 93) `test-dump.CMD´ `test" %USERDOMAIN%\\&\\"test´ -- *VULNERABLE*
+-      `test-dump.exe´ `test" my_domain\\´ ERROR: The specified path is invalid.
+ 
+-Done. - 48 case(s) VULNERABLE on batch
