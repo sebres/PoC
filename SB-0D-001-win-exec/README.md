@@ -34,6 +34,11 @@ Language | Level | Fixed | Confirmed | Ticket | Test | Result
 **Scala** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>scala [test-dump-inv.scala](test-dump-inv.scala)</sub> | <sub>[result](results/jvm.diff)</sub>
 **Your preferred lang** | - | - | - | - | - | -
 
+Thereby the vulnerability should be verified for two cases - execution of PE-executable (exe-files) as well as the batch-files (.cmd and .bat).
+
+**Note:**
+The major injury of batch-execution is happened by pre-processing of the arguments with special meta-chars (so depends on quotes-count or position), but some tests show that some languages seem to have here additionally insufficient escaping by some special characters (looks like vulnerable arguments-handling in any case, also by execution of the exe-files).
+
 #### How to test:
 
 Build `test-dump.exe` using MSVC or MINGW-gcc, which will be used together with [test-dump.cmd](test-dump.cmd) in tests for dump of arguments:
