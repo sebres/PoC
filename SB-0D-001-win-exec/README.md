@@ -33,3 +33,22 @@ Language | Level | Fixed | Confirmed | Ticket | Test | Result
 **Java** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>[test-dump-inv.java](test-dump-inv.java) <br/> [test-dump-inv.java.cmd](test-dump-inv.java.cmd)</sub> | <sub>[result](results/jvm.diff)</sub>
 **Scala** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>scala [test-dump-inv.scala](test-dump-inv.scala)</sub> | <sub>[result](results/jvm.diff)</sub>
 **Your preferred lang** | - | - | - | - | - | -
+
+#### How to test:
+
+Build `test-dump.exe` using MSVC or MINGW-gcc, which will be used together with [test-dump.cmd](test-dump.cmd) in tests for dump of arguments:
+```bash
+gcc -mconsole test-exec.c -o test-dump.exe
+```
+If no toolchain for build is available, simply download and unpack it from [test-dump.zip](https://github.com/sebres/PoC/files/2316009/test-dump.zip).
+
+Hereafter just execute the test-script (see column "Test" in table above).
+Each step of the test-case executes `test-dump.exe` as well as `test-dump.cmd` with some test arguments 
+and compares the output of dump with original supplied arguments.
+
+**Note:**
+The tests will show if the arguments gets from `test-dump` are completely different (like most from the [results/jvm.diff](results/jvm.diff)) or vulnerable only on invocation of batch-files (see [results/tcl.diff](results/tcl.diff) or [results/python.diff](results/python.diff), where the execution of exe-file is not affected).
+
+So in case of JVM (java, scala) because the execution of exe-files is affected by insufficient escape/quoting it is classified as **grave**.
+
+The results are provided as diff-files for better readability of different/vulnerable places (red-marked) on github resp. most external diff-viewer.
