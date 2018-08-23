@@ -26,10 +26,10 @@ so many languages seem to be affected similar way also by same vulnerability.
 
 #### Current state:
 
-Language | Level | Fixed | Confirmed | Ticket | Test
---- | --- | --- | --- | --- | ---
-**TCL** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | :heavy_check_mark: <sub>[[diff]](https://core.tcl-lang.org/tcl/vdiff?from=core-8-5-branch&to=0-day-21b0629c81)</sub> | :heavy_check_mark: | <sub>[[21b0629c81fbe38a]](https://core.tcl-lang.org/tcl/info/21b0629c81fbe38a)</sub> | <sub>tclsh [test-dump-inv.tcl](test-dump-inv.tcl)</sub>
-**Python** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | - | - | - | <sub>python [test-dump-inv.py](test-dump-inv.py)</sub>
-**Java** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>[test-dump-inv.java](test-dump-inv.java) <br/> [test-dump-inv.java.cmd](test-dump-inv.java.cmd)</sub>
-**Scala** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>scala [test-dump-inv.scala](test-dump-inv.scala)</sub>
-**Your preferred lang** | - | - | - | - | -
+Language | Level | Fixed | Confirmed | Ticket | Test | Result
+--- | --- | --- | --- | --- | --- | ---
+**TCL** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | :heavy_check_mark: <sub>[[diff]](https://core.tcl-lang.org/tcl/vdiff?from=core-8-5-branch&to=0-day-21b0629c81)</sub> | :heavy_check_mark: | <sub>[[21b0629c81fbe38a]](https://core.tcl-lang.org/tcl/info/21b0629c81fbe38a)</sub> | <sub>tclsh [test-dump-inv.tcl](test-dump-inv.tcl)</sub> | <sub>[result](results/tcl.diff)</sub>
+**Python** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | - | - | - | <sub>python [test-dump-inv.py](test-dump-inv.py)</sub> | <sub>[result](results/python.diff)</sub>
+**Java** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>[test-dump-inv.java](test-dump-inv.java) <br/> [test-dump-inv.java.cmd](test-dump-inv.java.cmd)</sub> | <sub>[result](results/jvm.diff)</sub>
+**Scala** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>scala [test-dump-inv.scala](test-dump-inv.scala)</sub> | <sub>[result](results/jvm.diff)</sub>
+**Your preferred lang** | - | - | - | - | - | -
