@@ -5,6 +5,12 @@ set testinv {test-dump.exe test-dump.CMD}
 #set testinv [list [list [info nameofexecutable] test-dump.tcl] test-dump.tcl.CMD]
 set ::env(TCLSH) [file nativename [info nameofexecutable]]
 
+# e. g. to test another target language {perl test-dump-part.pl ...}
+set testPartCall {}
+if {[llength ::argv] && [lindex $::argv 0] eq "-external"} {
+  set testPartCall [lrange $::argv 1 end]
+}
+
 set c 0
 set cDiff 0
 set cVuln 0
@@ -84,6 +90,11 @@ foreach args {
   foreach cmd $testinv {
     puts -nonewline [format "*%3d) \x60%s\xb4" \
       $c [join [list test-dump[file extension [lindex $cmd 0]] {*}$args] "\xb4 \x60"]]
+    # if external (call another language):
+    if {[llength $testPartCall]} {
+      set cmd [linsert $cmd 0 {*}$testPartCall]
+    }
+    # exec:
     if {[catch {
       set r [exec {*}$cmd {*}$args]
     } r]} {
