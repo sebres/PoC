@@ -108,8 +108,8 @@
 -* 21) `test-dump.exe´ `1st´ `test"\"&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test"&whoami 3rd´
 -* 21) `test-dump.CMD´ `1st´ `test"\"&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test"´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test"´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 22) `test-dump.exe´ `1st´ `test""\"&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test"&whoami´ `3rd´
@@ -119,8 +119,8 @@
 -* 23) `test-dump.exe´ `1st´ `test"""\"&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test""&whoami´ `3rd´
 -* 23) `test-dump.CMD´ `1st´ `test"""\"&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test""´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test""´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 24) `test-dump.exe´ `1st´ `test\"\&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test"\&whoami´ `3rd´
@@ -130,8 +130,8 @@
 -* 25) `test-dump.exe´ `1st´ `test"\"\&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test"\&whoami 3rd´
 -* 25) `test-dump.CMD´ `1st´ `test"\"\&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test"\´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test"\´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 26) `test-dump.exe´ `1st´ `test""\"\&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test"\&whoami´ `3rd´
@@ -141,20 +141,20 @@
 -* 27) `test-dump.exe´ `1st´ `test"""\"\&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test""\&whoami´ `3rd´
 -* 27) `test-dump.CMD´ `1st´ `test"""\"\&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test""\´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test""\´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
  * 28) `test-dump.exe´ `1st´ `test&whoami´ `3rd´
        `test-dump.exe´ `1st´ `test&whoami´ `3rd´
 -* 28) `test-dump.CMD´ `1st´ `test&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
  * 29) `test-dump.exe´ `1st´ `test|whoami´ `3rd´
        `test-dump.exe´ `1st´ `test|whoami´ `3rd´
 -* 29) `test-dump.CMD´ `1st´ `test|whoami´ `3rd´ -- *VULNERABLE*
--  ERROR: 'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR: ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 30) `test-dump.exe´ `1st´ `"test&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test&whoami 3rd´
@@ -179,14 +179,14 @@
 -* 34) `test-dump.exe´ `1st´ `"test"&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test&whoami´ `3rd´
 -* 34) `test-dump.CMD´ `1st´ `"test"&whoami´ `3rd´ -- *VULNERABLE*
--  ERROR:     `test-dump.exe´ `1st´ `test´'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR:     `test-dump.exe´ `1st´ `test´ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 35) `test-dump.exe´ `1st´ `"test"|whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test|whoami´ `3rd´
 -* 35) `test-dump.CMD´ `1st´ `"test"|whoami´ `3rd´ -- *VULNERABLE*
--  ERROR: 'whoami' is not recognized as an internal or external command,
--  operable program or batch file.
+-  ERROR: ERROR: Invalid argument/option - '3rd'.
+-  Type "WHOAMI /?" for usage.
  --------------------
 -* 36) `test-dump.exe´ `1st´ `""test"&whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test&whoami 3rd´
@@ -301,7 +301,7 @@
  * 58) `test-dump.exe´ `1st´ `test>whoami´ `3rd´
        `test-dump.exe´ `1st´ `test>whoami´ `3rd´
 -* 58) `test-dump.CMD´ `1st´ `test>whoami´ `3rd´ -- *VULNERABLE*
- -
+-
  --------------------
  * 59) `test-dump.exe´ `1st´ `test<whoami´ `3rd´
        `test-dump.exe´ `1st´ `test<whoami´ `3rd´
@@ -331,7 +331,7 @@
 -* 64) `test-dump.exe´ `1st´ `"test">whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test>whoami´ `3rd´
 -* 64) `test-dump.CMD´ `1st´ `"test">whoami´ `3rd´ -- *VULNERABLE*
- -
+-
  --------------------
 -* 65) `test-dump.exe´ `1st´ `"test"<whoami´ `3rd´ -- *DIFFERENT*
 -      `test-dump.exe´ `1st´ `test<whoami´ `3rd´
