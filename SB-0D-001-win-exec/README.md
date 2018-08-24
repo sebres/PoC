@@ -61,9 +61,14 @@ So in case of Perl (strawberryperl) or JVM-lang's (java, scala) because the exec
 
 The results are provided as diff-files for better readability of different/vulnerable places (red-marked) on github resp. most external diff-viewer.
 
-Tcl-test script provides possibility to test other languages (so one don't need to write complex test-suite, it is enough to provide small simple caller-script like [test-dump-part.pl](test-dump-part.pl), used for example to test perl):
+Tcl-test script provides possibility to test other languages (so one don't need to write complex test-suite, it is enough to provide small simple caller-script like [test-dump-part.pl](test-dump-part.pl), used for example to test perl or golang):
 ```bash
+# test perl:
 tclsh test-dump-inv.tcl -external perl test-dump-part.pl
+
+# test golang:
+go build -o test-dump-part.go.exe test-dump-part.go
+tclsh test-dump-inv.tcl -external test-dump-part.go.exe
 ```
-In this case this tcl-test-suite will call perl, that will call `test-dump.exe` and `test-dump.cmd` with test-arguments.
-Of course the fixed tcl-version should be used to check other language this way.
+In this case this tcl-test-suite will call perl, that will call `test-dump.exe` and `test-dump.cmd` with test-arguments.<br/>
+Of course the already fixed tcl-version should be used to check other language this way.
