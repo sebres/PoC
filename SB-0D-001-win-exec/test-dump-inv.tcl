@@ -8,6 +8,14 @@ set ::env(TCLSH) [file nativename [info nameofexecutable]]
 # e. g. to test another target language {perl test-dump-part.pl ...}
 set testPartCall {}
 if {[llength ::argv] && [lindex $::argv 0] eq "-external"} {
+  # check tcl is affected by the same vulnerability:
+  if {[catch {
+    exec test-dump.CMD {test" %USERDOMAIN%\\&\\"test}
+  } r] || [string trim $r] ne "\x60test-dump.exe\xb4 \x60test\" %USERDOMAIN%\\\\&\\\\\"test\xb4"} {
+    puts "\nThis Tcl-version is vulnerable and cannot be used for testing."
+    exit -1
+  }
+  # program to invoke:
   set testPartCall [lrange $::argv 1 end]
 }
 
