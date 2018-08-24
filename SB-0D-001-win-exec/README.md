@@ -33,7 +33,7 @@ so many languages seem to be affected similar way also by same vulnerability.
 Language | Level | Fixed | Confirmed | Ticket | Test | Result
 --- | --- | --- | --- | --- | --- | ---
 **TCL** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | :heavy_check_mark: <sub>[[diff]](https://core.tcl-lang.org/tcl/vdiff?from=core-8-5-branch&to=0-day-21b0629c81)</sub> | :heavy_check_mark: | <sub>[[21b0629c81fbe38a]](https://core.tcl-lang.org/tcl/info/21b0629c81fbe38a)</sub> | <sub>tclsh [test-dump-inv.tcl](test-dump-inv.tcl)</sub> | <sub>[result](results/tcl.diff)</sub>
-**Python** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | - | - | - | <sub>python [test-dump-inv.py](test-dump-inv.py)</sub> | <sub>[result](results/python.diff)</sub>
+**Python** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | :white_check_mark: <sub>[[PR#8906]](https://github.com/python/cpython/pull/8906)</sub> | - | [[bpo-34489]](https://bugs.python.org/issue34489)</sub> | <sub>python [test-dump-inv.py](test-dump-inv.py)</sub> | <sub>[result](results/python.diff)</sub>
 **Go** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | - | - | [[go/#27199]](https://github.com/golang/go/issues/27199) | <sub>go build -o test-dump-part.go.exe [test-dump-part.go](test-dump-part.go)<br/>tclsh test-dump-inv.tcl -external test-dump-part.go.exe</sub> | <sub>[result](results/go.diff)</sub>
 **Perl** (Strawberry) | :no_entry: <sub>grave</sub> | - | - | - | <sub>tclsh test-dump-inv.tcl -external perl [test-dump-part.pl](test-dump-part.pl)</sub> | <sub>[result](results/perl.diff)</sub>
 **Perl** (ActiveState) | :no_entry: <sub>grave</sub> | - | - | - | <sub>tclsh test-dump-inv.tcl -external perl [test-dump-part.pl](test-dump-part.pl)</sub> | <sub>[result](results/perl.diff)</sub>
