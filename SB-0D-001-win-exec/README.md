@@ -2,6 +2,10 @@
 
 ### &#x1F6A8; 0-day vulnerability "insufficient escape of special chars for quoting of arguments by exec process" by almost all languages for windows.
 
+#### Solution:
+
+Because the proper quoting/escape procedure is complex for windows - here is the [solution resp. algorithm description](https://github.com/sebres/PoC/blob/master/SB-0D-001-win-exec/SOLUTION.md).
+
 #### Prehistory:
 
 Windows does not really provide a proper way to execute process with arguments (as list or array).<br/>
