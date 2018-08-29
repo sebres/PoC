@@ -46,7 +46,7 @@ Main-routine BuildCommandLine:
       If flag ESCAPE set, append to CmdLine the argument as is;
       Else:
         Do-Escape - For each argument character:
-          - if char is BackSlash, notice current possition as BSPOS and bypass all together-standing BackSlash chars;
+          - if char is BackSlash, notice current possition as BSPOS and bypass all adjacent BackSlash chars;
           - if char is Quote:
             * invert flag UNPAIRED;
             * add unprocessed argument-part before, thereby if BSPOS was set, 
@@ -77,7 +77,7 @@ Sub-routine QuoteCmdLinePart (SpecCharsTable):
             
   Do-Specia-Escape - For each char from current position:
     - if char belongs to SpecCharsTable, bypass it;
-    - if char is BackSlash, notice current possition as BSPOS and bypass all together-standing BackSlash chars;
+    - if char is BackSlash, notice current possition as BSPOS and bypass all adjacent BackSlash chars;
     - otherwise stop Do-Specia-Escape cycle.
     
   Append found chars (all chars belonging to SpecCharsTable and backslashes), thereby if BSPOS was set, 
@@ -92,4 +92,4 @@ End of QuoteCmdLinePart.
      across all agruments, so it is not reset until end of argument processing (each quote found in arguments will 
      just invert this flag);
    - there is a char `%` that should be always enclosed in quotes (regardless state of flag `UNPAIRED`);
-   - together-standing backslashes should be escaped only if followed by `"` (already in argument or new one because of special quoted-escape);
+   - adjacent backslashes should be escaped only if followed by `"` (already in argument or new one because of special quoted-escape);
