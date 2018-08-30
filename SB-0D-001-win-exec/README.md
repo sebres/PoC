@@ -37,6 +37,7 @@ Language | Level | Fixed | Confirmed | Ticket | Test | Result
 **Go** | :no_entry_sign: <sub>middle (Batch-Only)</sub> | - | - | [[go/#27199]](https://github.com/golang/go/issues/27199) | <sub>go build -o test-dump-part.go.exe [test-dump-part.go](test-dump-part.go)<br/>tclsh test-dump-inv.tcl -external test-dump-part.go.exe</sub> | <sub>[result](results/go.diff)</sub>
 **Perl** (Strawberry) | :no_entry: <sub>grave</sub> | - | - | - | <sub>tclsh test-dump-inv.tcl -external perl [test-dump-part.pl](test-dump-part.pl)</sub> | <sub>[result](results/perl.diff)</sub>
 **Perl** (ActiveState) | :no_entry: <sub>grave</sub> | - | - | - | <sub>tclsh test-dump-inv.tcl -external perl [test-dump-part.pl](test-dump-part.pl)</sub> | <sub>[result](results/perl.diff)</sub>
+**PHP** | :no_entry: <sub>grave</sub> | - | - | - | <sub>tclsh test-dump-inv.tcl -external php [test-dump-part.php](test-dump-part.php)</sub> | <sub>[result](results/php.diff)</sub>
 **Java** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>[test-dump-inv.java](test-dump-inv.java) <br/> [test-dump-inv.java.cmd](test-dump-inv.java.cmd)</sub> | <sub>[result](results/jvm.diff)</sub>
 **Scala** / JVM | :no_entry: <sub>grave</sub> | - | - | - | <sub>scala [test-dump-inv.scala](test-dump-inv.scala)</sub> | <sub>[result](results/jvm.diff)</sub>
 **Your preferred lang** | - | - | - | - | - | -
@@ -61,7 +62,8 @@ and compares the output of dump with original supplied arguments.
 **Note:**
 The tests will show if the arguments gets from `test-dump` are completely different (like most from the [results/jvm.diff](results/jvm.diff)) or vulnerable only on invocation of batch-files (see [results/tcl.diff](results/tcl.diff) or [results/python.diff](results/python.diff), where the execution of exe-file is not affected).
 
-So in case of Perl (strawberryperl) or JVM-lang's (java, scala) because the execution of exe-files is affected by insufficient escape/quoting it is classified as **grave**.
+So in case of Perl, PHP or JVM-lang's (java, scala) because the execution of exe-files is affected by insufficient escape/quoting it is classified as **grave**.
+In case of PHP it is still worse because instead of proper escape, it simply removes the special chars (resp. just replaces the quote-chars with spaces), which (despite so documented) may be unexpected or unwanted.
 
 The results are provided as diff-files for better readability of different/vulnerable places (red-marked) on github resp. most external diff-viewer.
 

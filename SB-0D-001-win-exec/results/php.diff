@@ -1,0 +1,473 @@
+ > tclsh test-dump-inv.tcl -external php test-dump-part.php
+ --------------------
+-*  0) `test-dump.exe´ `1st´ `test"whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami´ `3rd´
+-*  0) `test-dump.CMD´ `1st´ `test"whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami´ `3rd´
+ --------------------
+-*  1) `test-dump.exe´ `1st´ `test""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami´ `3rd´
+-*  1) `test-dump.CMD´ `1st´ `test""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami´ `3rd´
+ --------------------
+-*  2) `test-dump.exe´ `1st´ `test"""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami´ `3rd´
+-*  2) `test-dump.CMD´ `1st´ `test"""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami´ `3rd´
+ --------------------
+-*  3) `test-dump.exe´ `1st´ `test""""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami´ `3rd´
+-*  3) `test-dump.CMD´ `1st´ `test""""whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami´ `3rd´
+ --------------------
+-*  4) `test-dump.exe´ `1st´ `test"whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami\´ `3rd´
+-*  4) `test-dump.CMD´ `1st´ `test"whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami\´ `3rd´
+ --------------------
+-*  5) `test-dump.exe´ `1st´ `test""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami\´ `3rd´
+-*  5) `test-dump.CMD´ `1st´ `test""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami\´ `3rd´
+ --------------------
+-*  6) `test-dump.exe´ `1st´ `test"""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami\´ `3rd´
+-*  6) `test-dump.CMD´ `1st´ `test"""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami\´ `3rd´
+ --------------------
+-*  7) `test-dump.exe´ `1st´ `test""""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami\´ `3rd´
+-*  7) `test-dump.CMD´ `1st´ `test""""whoami\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami\´ `3rd´
+ --------------------
+-*  8) `test-dump.exe´ `1st´ `test"whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami\´ `3rd´
+-*  8) `test-dump.CMD´ `1st´ `test"whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test whoami\´ `3rd´
+ --------------------
+-*  9) `test-dump.exe´ `1st´ `test""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami\´ `3rd´
+-*  9) `test-dump.CMD´ `1st´ `test""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  whoami\´ `3rd´
+ --------------------
+-* 10) `test-dump.exe´ `1st´ `test"""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami\´ `3rd´
+-* 10) `test-dump.CMD´ `1st´ `test"""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   whoami\´ `3rd´
+ --------------------
+-* 11) `test-dump.exe´ `1st´ `test""""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami\´ `3rd´
+-* 11) `test-dump.CMD´ `1st´ `test""""whoami\\´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test    whoami\´ `3rd´
+ --------------------
+ * 12) `test-dump.exe´ `1st´ `test\\&\\test´ `3rd´
+       `test-dump.exe´ `1st´ `test\\&\\test´ `3rd´
+ * 12) `test-dump.CMD´ `1st´ `test\\&\\test´ `3rd´
+       `test-dump.exe´ `1st´ `test\\&\\test´ `3rd´
+ --------------------
+-* 13) `test-dump.exe´ `1st´ `test"\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \\&\\test´ `3rd´
+-* 13) `test-dump.CMD´ `1st´ `test"\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \\&\\test´ `3rd´
+ --------------------
+-* 14) `test-dump.exe´ `1st´ `"test\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test\\&\\test´ `3rd´
+-* 14) `test-dump.CMD´ `1st´ `"test\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test\\&\\test´ `3rd´
+ --------------------
+-* 15) `test-dump.exe´ `1st´ `"test"\\&\\"test"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test \\&\\ test ´ `3rd´
+-* 15) `test-dump.CMD´ `1st´ `"test"\\&\\"test"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test \\&\\ test ´ `3rd´
+ --------------------
+-* 16) `test-dump.exe´ `1st´ `test\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\\ & \\test´ `3rd´
+-* 16) `test-dump.CMD´ `1st´ `test\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\\ & \\test´ `3rd´
+ --------------------
+-* 17) `test-dump.exe´ `1st´ `test"\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \\ & \\test´ `3rd´
+-* 17) `test-dump.CMD´ `1st´ `test"\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \\ & \\test´ `3rd´
+ --------------------
+-* 18) `test-dump.exe´ `1st´ `"test\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test\\ & \\test´ `3rd´
+-* 18) `test-dump.CMD´ `1st´ `"test\\"&"\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test\\ & \\test´ `3rd´
+ --------------------
+-* 19) `test-dump.exe´ `1st´ `"test"\\"&"\\"test"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test \\ & \\ test ´ `3rd´
+-* 19) `test-dump.CMD´ `1st´ `"test"\\"&"\\"test"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test \\ & \\ test ´ `3rd´
+ --------------------
+-* 20) `test-dump.exe´ `1st´ `test\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\ &whoami´ `3rd´
+-* 20) `test-dump.CMD´ `1st´ `test\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\ &whoami´ `3rd´
+ --------------------
+-* 21) `test-dump.exe´ `1st´ `test"\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \ &whoami´ `3rd´
+-* 21) `test-dump.CMD´ `1st´ `test"\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \ &whoami´ `3rd´
+ --------------------
+-* 22) `test-dump.exe´ `1st´ `test""\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  \ &whoami´ `3rd´
+-* 22) `test-dump.CMD´ `1st´ `test""\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  \ &whoami´ `3rd´
+ --------------------
+-* 23) `test-dump.exe´ `1st´ `test"""\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   \ &whoami´ `3rd´
+-* 23) `test-dump.CMD´ `1st´ `test"""\"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   \ &whoami´ `3rd´
+ --------------------
+-* 24) `test-dump.exe´ `1st´ `test\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\ \&whoami´ `3rd´
+-* 24) `test-dump.CMD´ `1st´ `test\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test\ \&whoami´ `3rd´
+ --------------------
+-* 25) `test-dump.exe´ `1st´ `test"\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \ \&whoami´ `3rd´
+-* 25) `test-dump.CMD´ `1st´ `test"\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test \ \&whoami´ `3rd´
+ --------------------
+-* 26) `test-dump.exe´ `1st´ `test""\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  \ \&whoami´ `3rd´
+-* 26) `test-dump.CMD´ `1st´ `test""\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  \ \&whoami´ `3rd´
+ --------------------
+-* 27) `test-dump.exe´ `1st´ `test"""\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   \ \&whoami´ `3rd´
+-* 27) `test-dump.CMD´ `1st´ `test"""\"\&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   \ \&whoami´ `3rd´
+ --------------------
+ * 28) `test-dump.exe´ `1st´ `test&whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test&whoami´ `3rd´
+ * 28) `test-dump.CMD´ `1st´ `test&whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test&whoami´ `3rd´
+ --------------------
+ * 29) `test-dump.exe´ `1st´ `test|whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test|whoami´ `3rd´
+ * 29) `test-dump.CMD´ `1st´ `test|whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test|whoami´ `3rd´
+ --------------------
+-* 30) `test-dump.exe´ `1st´ `"test&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&whoami´ `3rd´
+-* 30) `test-dump.CMD´ `1st´ `"test&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&whoami´ `3rd´
+ --------------------
+-* 31) `test-dump.exe´ `1st´ `"test|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|whoami´ `3rd´
+-* 31) `test-dump.CMD´ `1st´ `"test|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|whoami´ `3rd´
+ --------------------
+-* 32) `test-dump.exe´ `1st´ `test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &whoami´ `3rd´
+-* 32) `test-dump.CMD´ `1st´ `test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &whoami´ `3rd´
+ --------------------
+-* 33) `test-dump.exe´ `1st´ `test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |whoami´ `3rd´
+-* 33) `test-dump.CMD´ `1st´ `test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |whoami´ `3rd´
+ --------------------
+-* 34) `test-dump.exe´ `1st´ `"test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &whoami´ `3rd´
+-* 34) `test-dump.CMD´ `1st´ `"test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &whoami´ `3rd´
+ --------------------
+-* 35) `test-dump.exe´ `1st´ `"test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |whoami´ `3rd´
+-* 35) `test-dump.CMD´ `1st´ `"test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |whoami´ `3rd´
+ --------------------
+-* 36) `test-dump.exe´ `1st´ `""test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &whoami´ `3rd´
+-* 36) `test-dump.CMD´ `1st´ `""test"&whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &whoami´ `3rd´
+ --------------------
+-* 37) `test-dump.exe´ `1st´ `""test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |whoami´ `3rd´
+-* 37) `test-dump.CMD´ `1st´ `""test"|whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |whoami´ `3rd´
+ --------------------
+-* 38) `test-dump.exe´ `1st´ `test&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test&echo  ´ `3rd´
+-* 38) `test-dump.CMD´ `1st´ `test&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test&echo  ´ `3rd´
+ --------------------
+-* 39) `test-dump.exe´ `1st´ `test|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test|echo  ´ `3rd´
+-* 39) `test-dump.CMD´ `1st´ `test|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test|echo  ´ `3rd´
+ --------------------
+-* 40) `test-dump.exe´ `1st´ `"test&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&echo  ´ `3rd´
+-* 40) `test-dump.CMD´ `1st´ `"test&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&echo  ´ `3rd´
+ --------------------
+-* 41) `test-dump.exe´ `1st´ `"test|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|echo  ´ `3rd´
+-* 41) `test-dump.CMD´ `1st´ `"test|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|echo  ´ `3rd´
+ --------------------
+-* 42) `test-dump.exe´ `1st´ `test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &echo  ´ `3rd´
+-* 42) `test-dump.CMD´ `1st´ `test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &echo  ´ `3rd´
+ --------------------
+-* 43) `test-dump.exe´ `1st´ `test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |echo  ´ `3rd´
+-* 43) `test-dump.CMD´ `1st´ `test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |echo  ´ `3rd´
+ --------------------
+-* 44) `test-dump.exe´ `1st´ `"test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &echo  ´ `3rd´
+-* 44) `test-dump.CMD´ `1st´ `"test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &echo  ´ `3rd´
+ --------------------
+-* 45) `test-dump.exe´ `1st´ `"test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |echo  ´ `3rd´
+-* 45) `test-dump.CMD´ `1st´ `"test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |echo  ´ `3rd´
+ --------------------
+-* 46) `test-dump.exe´ `1st´ `""test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &echo  ´ `3rd´
+-* 46) `test-dump.CMD´ `1st´ `""test"&echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &echo  ´ `3rd´
+ --------------------
+-* 47) `test-dump.exe´ `1st´ `""test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |echo  ´ `3rd´
+-* 47) `test-dump.CMD´ `1st´ `""test"|echo "´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |echo  ´ `3rd´
+ --------------------
+-* 48) `test-dump.exe´ `1st´ `test&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test&echo   ´ `3rd´
+-* 48) `test-dump.CMD´ `1st´ `test&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test&echo   ´ `3rd´
+ --------------------
+-* 49) `test-dump.exe´ `1st´ `test|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test|echo   ´ `3rd´
+-* 49) `test-dump.CMD´ `1st´ `test|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test|echo   ´ `3rd´
+ --------------------
+-* 50) `test-dump.exe´ `1st´ `"test&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&echo   ´ `3rd´
+-* 50) `test-dump.CMD´ `1st´ `"test&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test&echo   ´ `3rd´
+ --------------------
+-* 51) `test-dump.exe´ `1st´ `"test|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|echo   ´ `3rd´
+-* 51) `test-dump.CMD´ `1st´ `"test|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test|echo   ´ `3rd´
+ --------------------
+-* 52) `test-dump.exe´ `1st´ `test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &echo   ´ `3rd´
+-* 52) `test-dump.CMD´ `1st´ `test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test &echo   ´ `3rd´
+ --------------------
+-* 53) `test-dump.exe´ `1st´ `test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |echo   ´ `3rd´
+-* 53) `test-dump.CMD´ `1st´ `test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test |echo   ´ `3rd´
+ --------------------
+-* 54) `test-dump.exe´ `1st´ `"test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &echo   ´ `3rd´
+-* 54) `test-dump.CMD´ `1st´ `"test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test &echo   ´ `3rd´
+ --------------------
+-* 55) `test-dump.exe´ `1st´ `"test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |echo   ´ `3rd´
+-* 55) `test-dump.CMD´ `1st´ `"test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test |echo   ´ `3rd´
+ --------------------
+-* 56) `test-dump.exe´ `1st´ `""test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &echo   ´ `3rd´
+-* 56) `test-dump.CMD´ `1st´ `""test"&echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test &echo   ´ `3rd´
+ --------------------
+-* 57) `test-dump.exe´ `1st´ `""test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |echo   ´ `3rd´
+-* 57) `test-dump.CMD´ `1st´ `""test"|echo ""´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test |echo   ´ `3rd´
+ --------------------
+ * 58) `test-dump.exe´ `1st´ `test>whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test>whoami´ `3rd´
+ * 58) `test-dump.CMD´ `1st´ `test>whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test>whoami´ `3rd´
+ --------------------
+ * 59) `test-dump.exe´ `1st´ `test<whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test<whoami´ `3rd´
+ * 59) `test-dump.CMD´ `1st´ `test<whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test<whoami´ `3rd´
+ --------------------
+-* 60) `test-dump.exe´ `1st´ `"test>whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test>whoami´ `3rd´
+-* 60) `test-dump.CMD´ `1st´ `"test>whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test>whoami´ `3rd´
+ --------------------
+-* 61) `test-dump.exe´ `1st´ `"test<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test<whoami´ `3rd´
+-* 61) `test-dump.CMD´ `1st´ `"test<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test<whoami´ `3rd´
+ --------------------
+-* 62) `test-dump.exe´ `1st´ `test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test >whoami´ `3rd´
+-* 62) `test-dump.CMD´ `1st´ `test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test >whoami´ `3rd´
+ --------------------
+-* 63) `test-dump.exe´ `1st´ `test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test <whoami´ `3rd´
+-* 63) `test-dump.CMD´ `1st´ `test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test <whoami´ `3rd´
+ --------------------
+-* 64) `test-dump.exe´ `1st´ `"test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test >whoami´ `3rd´
+-* 64) `test-dump.CMD´ `1st´ `"test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test >whoami´ `3rd´
+ --------------------
+-* 65) `test-dump.exe´ `1st´ `"test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test <whoami´ `3rd´
+-* 65) `test-dump.CMD´ `1st´ `"test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ ` test <whoami´ `3rd´
+ --------------------
+-* 66) `test-dump.exe´ `1st´ `""test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test >whoami´ `3rd´
+-* 66) `test-dump.CMD´ `1st´ `""test">whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test >whoami´ `3rd´
+ --------------------
+-* 67) `test-dump.exe´ `1st´ `""test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test <whoami´ `3rd´
+-* 67) `test-dump.CMD´ `1st´ `""test"<whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `  test <whoami´ `3rd´
+ --------------------
+ * 68) `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+       `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+ * 68) `test-dump.CMD´ `1st´ `test(whoami)´ `3rd´
+       `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+ --------------------
+ * 69) `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+       `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+ * 69) `test-dump.CMD´ `1st´ `test(whoami)´ `3rd´
+       `test-dump.exe´ `1st´ `test(whoami)´ `3rd´
+ --------------------
+-* 70) `test-dump.exe´ `1st´ `test"(whoami)´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test (whoami)´ `3rd´
+-* 70) `test-dump.CMD´ `1st´ `test"(whoami)´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test (whoami)´ `3rd´
+ --------------------
+-* 71) `test-dump.exe´ `1st´ `test"(whoami)´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test (whoami)´ `3rd´
+-* 71) `test-dump.CMD´ `1st´ `test"(whoami)´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test (whoami)´ `3rd´
+ --------------------
+ * 72) `test-dump.exe´ `1st´ `test^whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test^whoami´ `3rd´
+ * 72) `test-dump.CMD´ `1st´ `test^whoami´ `3rd´
+       `test-dump.exe´ `1st´ `test^whoami´ `3rd´
+ --------------------
+ * 73) `test-dump.exe´ `1st´ `test^^echo ^^^´ `3rd´
+       `test-dump.exe´ `1st´ `test^^echo ^^^´ `3rd´
+ * 73) `test-dump.CMD´ `1st´ `test^^echo ^^^´ `3rd´
+       `test-dump.exe´ `1st´ `test^^echo ^^^´ `3rd´
+ --------------------
+-* 74) `test-dump.exe´ `1st´ `test"^whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^whoami´ `3rd´
+-* 74) `test-dump.CMD´ `1st´ `test"^whoami´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^whoami´ `3rd´
+ --------------------
+-* 75) `test-dump.exe´ `1st´ `test"^^echo ^^^´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^^echo ^^^´ `3rd´
+-* 75) `test-dump.CMD´ `1st´ `test"^^echo ^^^´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^^echo ^^^´ `3rd´
+ --------------------
+-* 76) `test-dump.exe´ `1st´ `test"^echo ^^^"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^echo ^^^ ´ `3rd´
+-* 76) `test-dump.CMD´ `1st´ `test"^echo ^^^"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test ^echo ^^^ ´ `3rd´
+ --------------------
+-* 77) `test-dump.exe´ `1st´ `test""^echo" ^^^"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  ^echo  ^^^ ´ `3rd´
+-* 77) `test-dump.CMD´ `1st´ `test""^echo" ^^^"´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test  ^echo  ^^^ ´ `3rd´
+ --------------------
+-* 78) `test-dump.exe´ `1st´ `test%USERDOMAIN%\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \ USERNAME ´ `3rd´
+-* 78) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \ USERNAME ´ `3rd´
+ --------------------
+-* 79) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \ USERNAME ´ `3rd´
+-* 79) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \ USERNAME ´ `3rd´
+ --------------------
+-* 80) `test-dump.exe´ `1st´ `test%USERDOMAIN%\\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\ USERNAME ´ `3rd´
+-* 80) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\ USERNAME ´ `3rd´
+ --------------------
+-* 81) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\ USERNAME ´ `3rd´
+-* 81) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\ USERNAME ´ `3rd´
+ --------------------
+-* 82) `test-dump.exe´ `1st´ `test%USERDOMAIN%&%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN & USERNAME ´ `3rd´
+-* 82) `test-dump.CMD´ `1st´ `test%USERDOMAIN%&%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN & USERNAME ´ `3rd´
+ --------------------
+-* 83) `test-dump.exe´ `1st´ `test" %USERDOMAIN%&%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN & USERNAME ´ `3rd´
+-* 83) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%&%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN & USERNAME ´ `3rd´
+ --------------------
+-* 84) `test-dump.exe´ `1st´ `test%USERDOMAIN%\&\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\ USERNAME ´ `3rd´
+-* 84) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\&\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\ USERNAME ´ `3rd´
+ --------------------
+-* 85) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\&\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\ USERNAME ´ `3rd´
+-* 85) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\&\%USERNAME%´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\ USERNAME ´ `3rd´
+ --------------------
+-* 86) `test-dump.exe´ `1st´ `test%USERDOMAIN%\&\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\test´ `3rd´
+-* 86) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\&\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\test´ `3rd´
+ --------------------
+-* 87) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\&\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\test´ `3rd´
+-* 87) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\&\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\test´ `3rd´
+ --------------------
+-* 88) `test-dump.exe´ `1st´ `test%USERDOMAIN%\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\&\\test´ `3rd´
+-* 88) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\&\\test´ `3rd´
+ --------------------
+-* 89) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\&\\test´ `3rd´
+-* 89) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\\&\\test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\&\\test´ `3rd´
+ --------------------
+-* 90) `test-dump.exe´ `1st´ `test%USERDOMAIN%\&\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\ test´ `3rd´
+-* 90) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\&\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \&\ test´ `3rd´
+ --------------------
+-* 91) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\&\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\ test´ `3rd´
+-* 91) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\&\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \&\ test´ `3rd´
+ --------------------
+-* 92) `test-dump.exe´ `1st´ `test%USERDOMAIN%\\&\\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\&\\ test´ `3rd´
+-* 92) `test-dump.CMD´ `1st´ `test%USERDOMAIN%\\&\\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test USERDOMAIN \\&\\ test´ `3rd´
+ --------------------
+-* 93) `test-dump.exe´ `1st´ `test" %USERDOMAIN%\\&\\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\&\\ test´ `3rd´
+-* 93) `test-dump.CMD´ `1st´ `test" %USERDOMAIN%\\&\\"test´ `3rd´ -- *DIFFERENT*
+-      `test-dump.exe´ `1st´ `test   USERDOMAIN \\&\\ test´ `3rd´
+ 
+-Done. - 170 case(s) DIFFERENT/VULNERABLE

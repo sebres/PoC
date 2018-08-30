@@ -111,11 +111,11 @@ for arg in Args:
       if (prev is None or res == prev):
         cDiff += 1
         _out(" -- *DIFFERENT*\n");
-        # print("*****", res)
-        # sys.exit(-1);
       else:
         cVuln += 1
         _out(" -- *VULNERABLE*\n");
+      _out("  " + res + "\n");
+      sys.exit(-1);
 
     prev = res;
 
