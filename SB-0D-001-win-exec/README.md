@@ -67,14 +67,17 @@ In case of PHP it is still worse because instead of proper escape, it simply rem
 
 The results are provided as diff-files for better readability of different/vulnerable places (red-marked) on github resp. most external diff-viewer.
 
-Tcl-test script provides possibility to test other languages (so one don't need to write complex test-suite, it is enough to provide small simple caller-script like [test-dump-part.pl](test-dump-part.pl), used for example to test perl or golang):
+Tcl-test script provides possibility to test other languages (so one don't need to write complex test-suite, it is enough to provide small simple caller-script like [test-dump-part.pl](test-dump-part.pl) or some resulting executable, used for example to test perl, php or golang):
 ```bash
 # test perl:
 tclsh test-dump-inv.tcl -external perl test-dump-part.pl
+
+# test php:
+tclsh test-dump-inv.tcl -external php test-dump-part.php
 
 # test golang:
 go build -o test-dump-part.go.exe test-dump-part.go
 tclsh test-dump-inv.tcl -external test-dump-part.go.exe
 ```
-In this case this tcl-test-suite will call perl, that will call `test-dump.exe` and `test-dump.cmd` with test-arguments.<br/>
+In this case this tcl-test-suite will call perl (or other "external"), that will call `test-dump.exe` and `test-dump.cmd` with test-arguments.<br/>
 Of course the already fixed tcl-version should be used to check other language this way.
