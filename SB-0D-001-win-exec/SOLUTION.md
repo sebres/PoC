@@ -2,7 +2,7 @@
 
 ### 0-day vulnerability "insufficient escape of special chars for quoting of arguments by exec process" by almost all languages for windows.
 
-For possible example of implementation of this solution see [how it was fixed in TCL](https://core.tcl-lang.org/tcl/vdiff?from=core-8-5-branch&to=0-day-21b0629c81) (see the function `BuildCommandLine`)
+For possible example of implementation of this solution see [how it was fixed in TCL](https://core.tcl-lang.org/tcl/vdiff?from=19406e5bfb6789da&to=0-day-21b0629c81) (see the function `BuildCommandLine`)
 
 ## Algorithm:
 
